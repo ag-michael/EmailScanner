@@ -1,4 +1,4 @@
-##EmailScanner
+## EmailScanner
 
 EmailScanner is an integration application in python that uses `exchangelib` to process mail items in Microsoft exchange.
 
