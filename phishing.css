@@ -1,0 +1,79 @@
+
+  body {
+
+    font-family: Courier;
+    font-size: 18px;
+		background-color: white;
+		color:#fff;
+}
+
+#misp{
+	background-color:#0f1111 !important;
+}
+pre { 
+
+	color:#b5d9dd;
+}
+
+table{
+	border-width:10px;
+	
+}
+td {
+	border: solid 1px;
+	padding:3px;
+	color:#bbd4de;
+
+}
+#title{
+	font-size:20px;
+	text-align: center;
+}
+.detection,#detection{
+background-color:#281819;
+}
+#key{
+	font-weight:bold;
+	font-size:16px;
+	background-color:#1d1b1e;
+	color:#fff;
+}
+#value{
+	color:#fff;
+	background-color:#1d1b1e;
+}
+.userinfo,.computerinfo,#userinfo,#computerinfo{
+	background-color:#003249;
+}
+.falconhost,#falconhost{
+	background-color:#260119
+}
+.falcon,#falcon{
+	background-color:#000033;
+}
+.fireeye,#fireeye{
+	background-color:#131a21;
+}
+a {
+	color:white;
+	background-color:black;
+}
+#ts {
+	text-align:left !important;
+	font-weight: bold;
+	font-size:20px !important;
+	margin-left:20px;
+}
+#result {
+	border-left:solid 10px #385369;
+}
+  
+#emailbody {
+	color: black !important;
+	background-color:white !important;
+}
+
+#title{
+  
+}
+

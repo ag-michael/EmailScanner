@@ -1,0 +1,93 @@
+{
+    "activedirectory-enrichment": true, 
+    "activedirectory-enrichment-configuration": {
+        "adurl": "ldaps://adserver.mydomain.local", 
+        "computer_basedn": ",OU=Company,OU=Workstations,DC=mydomain,DC=local", 
+        "domain": "mydomain.local", 
+        "person_basedn": ",OU=Microsoft Exchange Security Groups,DC=mydomain,DC=local;,OU=ITUsers,DC=mydomain,DC=local;,OU=Sales,OU=Users,DC=mydomain,DC=local;,OU=Groups,OU=Marketing,OU=Users,DC=corp,DC=local", 
+        "service_account": "service_account_name", 
+        "service_account_password": "service_account_password"
+    }, 
+    "certs": {
+        "mail.mydomain.com": "/etc/ssl/certs/mail.mydomain.pem"
+    }, 
+    "cuckooapi": "http://10.0.0.8:1337", 
+    "cuckooweb": "https://cuckoo.mydomain.local", 
+    "cuckoowhitelist": [
+        ".msg", 
+        ".png", 
+        ".gif", 
+        ".png", 
+        ".jpeg", 
+        ".tiff",
+        ".txt"
+    ], 
+    "elasticsearch": true, 
+    "elasticsearch_config": {
+        "fireeye": {
+            "doctype": "email", 
+            "hosts": "10.0.0.7", 
+            "index": "fireeye"
+        }, 
+        "phishing": {
+            "doctype": "email", 
+            "hosts": "10.0.0.7", 
+            "index": "reportedphishing"
+        }
+    }, 
+    "email_alerts": true, 
+    "email_from": "Emailscanner@emailscanner.mydomain.local", 
+    "email_notify": [
+        "SOC@mydomain.com"
+    ], 
+    "email_server": "smtp.mydomain.com", 
+    "esenrichment": true, 
+    "esenrichment_server": "10.0.0.7",
+    "fireeyeaddress": "fireeye@mydomain.com", 
+    "falcon_customioc":true,
+    "falconapi_url":"https://falconapi.crowdstrike.com/indicators/entities/iocs/v1",
+    "falconapi_user":"<your falcon api user>",
+    "falconapi_key":"<your falconapikey>",
+    "mailboxes": [
+        {
+            "account": "phishing@mydomain.com", 
+            "autodiscover": false, 
+            "password": "<password for phishing@mydomain.com>", 
+            "server": "mail.mydomain.com", 
+            "username": "mydomain\\service_account_name"
+        }, 
+        {
+            "account": "spam@mydomain.com", 
+            "autodiscover": false, 
+            "password": "<password for spam@mydomain.com>", 
+            "server": "mail.mydomain.com", 
+            "username": "mydomain\\service_account_name"
+        }
+    ], 
+    "misp_enabled": true, 
+    "mispkey": "<your misp api key>", 
+    "mispui": "https://misp.mydomain.local:1234", 
+    "mispurl": "http://10.0.0.6:1984", 
+    "phishing_report_address": "phishing@mydomain.com", 
+    "phishingemailfolders": [
+        "[phishing@mydomain.com]", 
+        "Inbox.[phishing@mydomain.com]"
+    ], 
+    "folders_indexed":[
+        "[phishing@mydomain.com]",
+        "[phishing@mydomain.com]root.Inbox.Unconfirmed",
+        "[phishing@mydomain.com]root.Inbox.Spam",
+        "[phishing@mydomain.com]root.Inbox.Phishing",
+        "[phishing@mydomain.com]root.Inbox.Newsletter",
+        "[phishing@mydomain.com]root.Inbox.Internal",
+        "[phishing@mydomain.com]root.Inbox.Policy Violation",
+        "[phishing@mydomain.com]root.Inbox.Legitimate"
+    ],
+    "scannedfolders": [
+        "[phishing@mydomain.com]root.Inbox", 
+        "[phishing@mydomain.com]root.Inbox.Cuckoo", 
+        "Inbox.[phishing@mydomain.com]"
+    ], 
+    "thehive-url": "http://thehive.mydomain.local:9000/api/alert", 
+    "thehiveapi": "<thehive api key>"
+}
