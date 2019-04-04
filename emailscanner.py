@@ -24,6 +24,7 @@ import elasticsearch
 import base64
 import unicodedata
 import geoip
+import socket 
 
 import fireeyeformat
 import phishingformat
@@ -183,7 +184,7 @@ class MailboxScanner(Thread):
             ip=socket.gethostbyname(name)
             res=geoip.geolite2.lookup(ip).get_info_dict()
         except:
-            pass
+            self.lh.exception("GEODICT Exception")
         return res
 
     def jsonmail(self, mail, scan=False):
@@ -371,10 +372,10 @@ class MailboxScanner(Thread):
         if 'm' in jsonemail:
             try:
                 senderdomain=jsonemail['m']['sender'].split('@')[1]
-                jsonemail['SenderCountry']=self.geodict(senderdomain)
+                jsonemail['SenderGEOIP']=self.geodict(senderdomain)
             except:
-                self.lh.exception("Failed to set SenderCountry")
-                jsonemail['SenderCountry']={}
+                self.lh.exception("Failed to set SenderGEOIP")
+                jsonemail['SenderGEOIP']={}
             self.lh.debug("GeoIP responder finished for email: Subject:{} from: {}".format(jsonemail['subject'],jsonemail['sender']) )
 
     def esphishingresponder(self, mail, jsonemail):
