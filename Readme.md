@@ -2,6 +2,8 @@
 
 EmailScanner is an integration application in python that uses `exchangelib` to process mail items in Microsoft exchange.
 
+The purpose of this application is to aid and orchestrate security event analysis of reported phishing emails as well as related email security events.
+
 ## Features
 
 - ActiveDirectory inegration, processed messages are enriched using user or computer AD information.
